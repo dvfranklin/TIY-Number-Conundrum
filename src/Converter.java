@@ -4,14 +4,23 @@ public class Converter {
     public static String toText(int number) {
         String finalText = "";
 
-        if(number % 100 <= 19){
-            finalText = underTwenty(number);
-        } else if(number/1000 >= 1){
+        if(number == 0){
+            return "zero ";
+        }
+
+
+        if(number/1000 >= 1 && number/1000 <= 19){
             finalText = underTwenty(number / 1000) + "thousand ";
-            number = number - ((number/1000) * 1000);
+            number -= ((number/1000) * 1000);
             finalText += convertHundreds(number);
-        } else if(number/100 >= 1){
-            convertHundreds(number);
+        } else if(number/1000 >= 1){
+            finalText = convertHundreds(number / 1000) + "thousand " ;
+            number -= ((number/1000) * 1000);
+            finalText += convertHundreds(number);
+        } else if(number/100 >= 1) {
+        finalText += convertHundreds(number);
+        } else if(number % 100 <= 19 && number % 100 > 0){
+            finalText = underTwenty(number);
         } else{
             finalText += convertTens(number / 10, number % 10);
         }
@@ -22,7 +31,7 @@ public class Converter {
     public static String convertHundreds(int number){
         String text = "";
         text = underTwenty(number/100) + "hundred ";
-        number = number - ((number/100) * 100);
+        number -= ((number/100) * 100);
         text += convertTens(number / 10, number % 10);
         return text;
     }
@@ -55,8 +64,6 @@ public class Converter {
             case 9:
                 result = "ninety ";
                 break;
-            default:
-                result = "not a number";
         }
 
         result = result + underTwenty(ones);
@@ -65,8 +72,6 @@ public class Converter {
 
     public static String underTwenty(int number){
         switch(number){
-            case 0:
-                return "zero ";
             case 1:
                 return "one ";
             case 2:
@@ -105,9 +110,10 @@ public class Converter {
                 return "eighteen ";
             case 19:
                 return "nineteen ";
-            default:
-                return "not a number ";
+
         }
+
+        return "";
     }
 
 }
