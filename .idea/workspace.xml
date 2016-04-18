@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9a8492b-4f78-4224-b09d-17be4637612f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Converter.java" afterPath="$PROJECT_DIR$/src/Converter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ConverterTest.java" afterPath="$PROJECT_DIR$/test/ConverterTest.java" />
     </list>
     <ignored path="TIY-Number-Conundrum.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,28 +29,28 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Converter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Converter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Converter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="226">
+              <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConverterTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConverterTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/ConverterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+            <state relative-caret-position="1110">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,9 +78,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Converter.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/test/ConverterTest.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Converter.java" />
       </list>
     </option>
   </component>
@@ -666,29 +664,11 @@
       <updated>1460996251728</updated>
       <workItem from="1460996253024" duration="1090000" />
       <workItem from="1460997756781" duration="3589000" />
-      <workItem from="1461001980746" duration="6648000" />
+      <workItem from="1461001980746" duration="9156000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ConverterTest - 2016.04.18 at 14h 51m 23s.xml">
-      <configuration name="ConverterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTest - 2016.04.18 at 15h 03m 41s.xml">
-      <configuration name="ConverterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTest - 2016.04.18 at 15h 06m 33s.xml">
-      <configuration name="ConverterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTest - 2016.04.18 at 15h 56m 44s.xml">
-      <configuration name="ConverterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTest - 2016.04.18 at 15h 57m 23s.xml">
-      <configuration name="ConverterTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConverterTest - 2016.04.18 at 16h 26m 32s.xml">
-      <configuration name="ConverterTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ConverterTest - 2016.04.18 at 16h 34m 06s.xml">
       <configuration name="ConverterTest" configurationId="JUnit" />
     </history-entry>
@@ -701,12 +681,30 @@
     <history-entry file="ConverterTest - 2016.04.18 at 16h 43m 01s.xml">
       <configuration name="ConverterTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ConverterTest - 2016.04.18 at 16h 50m 55s.xml">
+      <configuration name="ConverterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTest - 2016.04.18 at 19h 08m 06s.xml">
+      <configuration name="ConverterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTest - 2016.04.18 at 19h 11m 27s.xml">
+      <configuration name="ConverterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTest - 2016.04.18 at 19h 11m 29s.xml">
+      <configuration name="ConverterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTest - 2016.04.18 at 19h 14m 24s.xml">
+      <configuration name="ConverterTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ConverterTest - 2016.04.18 at 19h 19m 46s.xml">
+      <configuration name="ConverterTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11327000" />
+    <option name="totallyTimeSpent" value="13835000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -752,19 +750,19 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Converter.java</url>
-          <line>50</line>
+          <line>70</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Converter.java</url>
-          <line>66</line>
+          <line>86</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Converter.java</url>
-          <line>41</line>
+          <line>59</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
@@ -774,8 +772,14 @@
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Converter.java</url>
+          <line>120</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="16" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -826,29 +830,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Converter.java">
+    <entry file="file://$PROJECT_DIR$/test/ConverterTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="1110">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/ConverterTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Converter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="226">
+          <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -19,16 +19,22 @@ public class Converter {
             finalText = underTwenty(number / 1000) + "thousand ";
             number %= 1000;
             finalText += convertHundreds(number);
-        } else if(number/1000 >= 1){
+        } /*else if(number/1000000 >= 1){
+            finalText = convertMillions(number/1000);
+            number %= 1000;
+            finalText += convertThousands(number);
+            number %= 1000;
+            finalText += convertHundreds(number);
+        } */ else if(number/1000 >= 1){
             finalText = convertThousands(number / 1000);
-            number -= ((number/1000) * 1000);
+            number %= 1000;
             finalText += convertHundreds(number);
         } else if(number/100 >= 1) {
-        finalText += convertHundreds(number);
+            finalText += convertHundreds(number);
         } else if(number % 100 <= 19 && number % 100 > 0){
             finalText = underTwenty(number);
         } else{
-            finalText += convertTens(number / 10, number % 10);
+            finalText += convertTens(number);
         }
 
 
@@ -38,10 +44,24 @@ public class Converter {
         return finalText;
     }
 
+/*    public static String convertMillions(int number){
+        String text = "";
+
+        if(number % 100 < 20){
+            text = underTwenty(number / 100);
+        }
+        text += convertThousands(number);
+        text += "million ";
+        return text;
+    }
+*/
+
     public static String convertThousands(int number){
         String text = "";
-        text = underTwenty(number / 100);
-        number %= 100;
+
+        if(number % 100 < 20) {
+            text = underTwenty(number / 100);
+        }
         text += convertHundreds(number);
         text += "thousand ";
         return text;
@@ -57,16 +77,16 @@ public class Converter {
         if(number <= 19){
             text += underTwenty(number);
         } else {
-            text += convertTens(number / 10, number % 10);
+            text += convertTens(number);
         }
 
         return text;
     }
 
-    public static String convertTens(int tens, int ones){
+    public static String convertTens(int number){
         String result = "";
 
-        switch(tens){
+        switch(number / 10){
             case 2:
                 result = "twenty ";
                 break;
@@ -93,7 +113,7 @@ public class Converter {
                 break;
         }
 
-        result = result + underTwenty(ones);
+        result += underTwenty(number % 10);
         return result;
     }
 
