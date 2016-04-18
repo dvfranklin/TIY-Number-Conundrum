@@ -3,18 +3,24 @@ public class Converter {
 
     public static String toText(int number) {
         String finalText = "";
+        boolean isNeg = false;
 
         if(number == 0){
             return "zero ";
         }
 
+        if(number < 0){
+            number = Math.abs(number);
+            isNeg = true;
+        }
+
 
         if(number/1000 >= 1 && number/1000 <= 19){
             finalText = underTwenty(number / 1000) + "thousand ";
-            number -= ((number/1000) * 1000);
+            number %= 1000;
             finalText += convertHundreds(number);
         } else if(number/1000 >= 1){
-            finalText = convertHundreds(number / 1000) + "thousand " ;
+            finalText = convertThousands(number / 1000);
             number -= ((number/1000) * 1000);
             finalText += convertHundreds(number);
         } else if(number/100 >= 1) {
@@ -25,14 +31,35 @@ public class Converter {
             finalText += convertTens(number / 10, number % 10);
         }
 
+
+        if(isNeg){
+            finalText = "negative " + finalText;
+        }
         return finalText;
+    }
+
+    public static String convertThousands(int number){
+        String text = "";
+        text = underTwenty(number / 100);
+        number %= 100;
+        text += convertHundreds(number);
+        text += "thousand ";
+        return text;
     }
 
     public static String convertHundreds(int number){
         String text = "";
-        text = underTwenty(number/100) + "hundred ";
-        number -= ((number/100) * 100);
-        text += convertTens(number / 10, number % 10);
+        text = underTwenty(number / 100);
+        if(text != ""){
+            text += "hundred ";
+        }
+        number %= 100;
+        if(number <= 19){
+            text += underTwenty(number);
+        } else {
+            text += convertTens(number / 10, number % 10);
+        }
+
         return text;
     }
 
