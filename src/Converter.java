@@ -19,16 +19,10 @@ public class Converter {
             finalText = underTwenty(number / 1000) + "thousand ";
             number %= 1000;
             finalText += convertHundreds(number);
-        } /*else if(number/1000000 >= 1){
-            finalText = convertMillions(number/1000);
-            number %= 1000;
-            finalText += convertThousands(number);
-            number %= 1000;
-            finalText += convertHundreds(number);
-        } */ else if(number/1000 >= 1){
-            finalText = convertThousands(number / 1000);
-            number %= 1000;
-            finalText += convertHundreds(number);
+        } else if(number/1000000 >= 1){
+            finalText = convertMillions(number);
+        } else if(number/1000 >= 1){
+            finalText = convertThousands(number);
         } else if(number/100 >= 1) {
             finalText += convertHundreds(number);
         } else if(number % 100 <= 19 && number % 100 > 0){
@@ -43,27 +37,40 @@ public class Converter {
         }
         return finalText;
     }
+    
 
-/*    public static String convertMillions(int number){
+    public static String convertMillions(int number){
         String text = "";
 
-        if(number % 100 < 20){
-            text = underTwenty(number / 100);
+        if((number / 1000000) % 100 < 20){
+            text = underTwenty(number / 1000000);
+        } else {
+            text = convertHundreds(number / 1000000);
         }
+        if(text != ""){
+            text += "million ";
+        }
+
+        number %= 1000000;
         text += convertThousands(number);
-        text += "million ";
+
         return text;
     }
-*/
+
 
     public static String convertThousands(int number){
         String text = "";
 
-        if(number % 100 < 20) {
-            text = underTwenty(number / 100);
+        if(number % 100 < 20 && number % 100 > 0) {
+            text = underTwenty(number / 1000);
         }
+        text += convertHundreds(number/1000);
+        if(text != ""){
+            text += "thousand ";
+        }
+
+        number %= 1000;
         text += convertHundreds(number);
-        text += "thousand ";
         return text;
     }
 

@@ -74,4 +74,14 @@ public class ConverterTest {
 
         assertThat(Converter.toText(325325), equalTo("three hundred twenty five thousand three hundred twenty five "));
     }
+
+    @Test
+    public void when1230000EnteredReturnString(){
+        assertThat(Converter.toText(1230000), equalTo("one million two hundred thirty thousand "));
+    }
+
+    @Test
+    public void when325123780EnteredReturnString(){
+        assertThat(Converter.toText(325123780), equalTo("three hundred twenty five million one hundred twenty three thousand seven hundred eighty "));
+    }
 }
