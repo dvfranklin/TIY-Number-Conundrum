@@ -3,7 +3,9 @@ public class Converter {
 
     public static String toText(int number) {
         String finalText = "";
+        String placeholder = "";
         boolean isNeg = false;
+
 
         if(number == 0){
             return "zero ";
@@ -15,20 +17,38 @@ public class Converter {
         }
 
 
-        if(number/1000 >= 1 && number/1000 <= 19){
-            finalText = underTwenty(number / 1000) + "thousand ";
-            number %= 1000;
-            finalText += convertHundreds(number);
-        } else if(number / 1000000000 >= 1){
-            finalText = convertBillions(number);
+        // convert 1,000,000,000 - integer limit
+        if(number / 1000000000 >= 1){
+
+            finalText = processThree(number, 1000000000, "billion ");
+            finalText += processThree(number, 1000000, "million ");
+            finalText += processThree(number, 1000, "thousand ");
+            finalText += convertHundreds(number % 1000);
+
+        // convert 1,000,000 - 999,999,999
         } else if(number/1000000 >= 1){
-            finalText = convertMillions(number);
+
+            finalText += processThree(number, 1000000, "million ");
+            finalText += processThree(number, 1000, "thousand ");
+            finalText += convertHundreds(number % 1000);
+
+        // convert 1,000-999,999
         } else if(number/1000 >= 1){
-            finalText = convertThousands(number);
+
+            finalText += processThree(number, 1000, "thousand ");
+            finalText += convertHundreds(number % 1000);
+
+        // convert 100-999
         } else if(number/100 >= 1) {
+
             finalText += convertHundreds(number);
+
+        // convert 1-19
         } else if(number % 100 <= 19 && number % 100 > 0){
+
             finalText = underTwenty(number);
+
+        //convert 20-99
         } else{
             finalText += convertTens(number);
         }
@@ -40,45 +60,28 @@ public class Converter {
         return finalText;
     }
 
-    public static String convertBillions(int number){
-        String text = "";
-
-        if((number / 1000000000) % 100 < 20){
-            text = underTwenty(number / 1000000000);
+    /**
+     * Processes chunks of three digits for billions, millions, thousands and adds the appropriate suffix
+     * @param number
+     * @param divisor
+     * @param suffix The string to append to denote billion, million, thousand
+     * @return A string representing the three digits in text form, plus a suffix if necessary
+     */
+    private static String processThree(int number, long divisor, String suffix){
+        String placeholder = overOneThousand((int)(number % (divisor * 1000)/(divisor)));
+        if(!placeholder.equals("")){
+            return placeholder + suffix;
         } else {
-            text = convertHundreds(number / 1000000000);
+            return "";
         }
-        if (!text.equals("")){
-            text += "billion ";
-        }
-
-        number %= 1000000000;
-        text += convertMillions(number);
-
-        return text;
     }
 
-    public static String convertMillions(int number){
-        String text = "";
-
-        if((number / 1000000) % 100 < 20){
-            text = underTwenty(number / 1000000);
-        } else {
-            text = convertHundreds(number / 1000000);
-        }
-        String temp = "";
-        if(!text.equals("")){
-            text += "million ";
-        }
-
-        number %= 1000000;
-        text += convertThousands(number);
-
-        return text;
-    }
-
-
-    public static String convertThousands(int number){
+    /**
+     * Processes numbers over one thousand
+     * @param number A one to three digit integer to be converted into text
+     * @return The string representing the three digit integer
+     */
+    private static String overOneThousand(int number){
         String text = "";
 
         if(number % 100 < 20 && number % 100 > 0) {
@@ -86,17 +89,18 @@ public class Converter {
         } else {
             text += convertHundreds(number/1000);
         }
-        String temp = "";
-        if(!text.equals("")){
-            text += "thousand ";
-        }
 
         number %= 1000;
         text += convertHundreds(number);
         return text;
     }
 
-    public static String convertHundreds(int number){
+    /**
+     * Processes numbers between 100-999
+     * @param number A three digit integer
+     * @return A string representing the integer in text
+     */
+    private static String convertHundreds(int number){
         String text = "";
         text = underTwenty(number / 100);
         if(!text.equals("")){
@@ -112,7 +116,12 @@ public class Converter {
         return text;
     }
 
-    public static String convertTens(int number){
+    /**
+     * Recognizes the tens digit and turns it into the relevant text
+     * @param number A number between 20-99
+     * @return The text represented by the tens digit (i.e. twenty, thirty, forty)
+     */
+    private static String convertTens(int number){
         String result = "";
 
         switch(number / 10){
@@ -146,7 +155,12 @@ public class Converter {
         return result;
     }
 
-    public static String underTwenty(int number){
+    /**
+     * Processes numbers between 1-19 (special cases)
+     * @param number An integer between 1-19
+     * @return The text representing that integer
+     */
+    private static String underTwenty(int number){
         switch(number){
             case 1:
                 return "one ";
