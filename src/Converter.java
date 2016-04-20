@@ -19,6 +19,8 @@ public class Converter {
             finalText = underTwenty(number / 1000) + "thousand ";
             number %= 1000;
             finalText += convertHundreds(number);
+        } else if(number / 1000000000 >= 1){
+            finalText = convertBillions(number);
         } else if(number/1000000 >= 1){
             finalText = convertMillions(number);
         } else if(number/1000 >= 1){
@@ -37,7 +39,24 @@ public class Converter {
         }
         return finalText;
     }
-    
+
+    public static String convertBillions(int number){
+        String text = "";
+
+        if((number / 1000000000) % 100 < 20){
+            text = underTwenty(number / 1000000000);
+        } else {
+            text = convertHundreds(number / 1000000000);
+        }
+        if (!text.equals("")){
+            text += "billion ";
+        }
+
+        number %= 1000000000;
+        text += convertMillions(number);
+
+        return text;
+    }
 
     public static String convertMillions(int number){
         String text = "";
@@ -47,7 +66,8 @@ public class Converter {
         } else {
             text = convertHundreds(number / 1000000);
         }
-        if(text != ""){
+        String temp = "";
+        if(!text.equals("")){
             text += "million ";
         }
 
@@ -63,9 +83,11 @@ public class Converter {
 
         if(number % 100 < 20 && number % 100 > 0) {
             text = underTwenty(number / 1000);
+        } else {
+            text += convertHundreds(number/1000);
         }
-        text += convertHundreds(number/1000);
-        if(text != ""){
+        String temp = "";
+        if(!text.equals("")){
             text += "thousand ";
         }
 
@@ -77,7 +99,7 @@ public class Converter {
     public static String convertHundreds(int number){
         String text = "";
         text = underTwenty(number / 100);
-        if(text != ""){
+        if(!text.equals("")){
             text += "hundred ";
         }
         number %= 100;
